@@ -55,6 +55,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .deploy/docker-compose.yaml
+          git checkout -b feat/update-app-version-${BUILD_NUMBER}
           git commit -m "new app version: ${BUILD_NUMBER}"
           git push
 
