@@ -15,6 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>21</java.version>
+    <app.image.name>jib-example</app.image.name>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -49,9 +50,9 @@
 					<from>
 						<image>eclipse-temurin:21</image>
 					</from>
-          <to>
-            <image>fclebinho/jib-example</image>
-          </to>
+					<to>
+						<image>docker.io/fclebinho/${app.image.name}:${app.image.tag}</image>
+					</to>
         </configuration>
       </plugin>
 		</plugins>
