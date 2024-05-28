@@ -61,12 +61,12 @@ jobs:
       - name: Update and commit app version in userdata.sh file
         run: |
           BUILD_NUMBER=${{ steps.build-number.outputs.BUILD_NUMBER }}
-          echo -e "Current .deploy/terraform/userdata.sh\n$(cat .deploy/terraform/userdata.sh)"
-          sed -i -E 's_(${{ env.DOCKERHUB_REPO }}:)([^"]*)_\1'${BUILD_NUMBER}'_' .deploy/terraform/userdata.sh
-          echo -e "Current .deploy/terraform/userdata.sh\n$(cat .deploy/terraform/userdata.sh)"
+          echo -e "Current .deploy/terraform/launchconfigurations.tf\n$(cat .deploy/terraform/launchconfigurations.tf)"
+          sed -i -E 's_(${{ env.DOCKERHUB_REPO }}:)([^"]*)_\1'${BUILD_NUMBER}'_' .deploy/terraform/launchconfigurations.tf
+          echo -e "Current .deploy/terraform/launchconfigurations.tf\n$(cat .deploy/terraform/launchconfigurations.tf)"
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add .deploy/terraform/userdata.sh
+          git add .deploy/terraform/launchconfigurations.tf
           git commit -m "new app version: ${BUILD_NUMBER}"
           git push
 
