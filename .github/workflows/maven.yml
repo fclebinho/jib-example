@@ -58,7 +58,7 @@ jobs:
       #     git commit -m "new app version: ${BUILD_NUMBER}"
       #     git push
 
-      - name: Update and commit app version in userdata.sh file
+      - name: Update and commit app version in terraform/launchconfigurations.tf file
         run: |
           BUILD_NUMBER=${{ steps.build-number.outputs.BUILD_NUMBER }}
           echo -e "Current .deploy/terraform/launchconfigurations.tf\n$(cat .deploy/terraform/launchconfigurations.tf)"
