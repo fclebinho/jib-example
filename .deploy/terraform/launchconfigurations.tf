@@ -23,8 +23,8 @@ resource "aws_launch_configuration" "ec2" {
   sudo service docker start
   sudo usermod -a -G docker ec2-user
   sudo chmod 666 /var/run/docker.sock
-  sudo docker pull fclebinho/jib-example:2024.5.29.1.32.59
-  sudo docker run -d -p 80:8080 fclebinho/jib-example:2024.5.29.1.32.59
+  sudo docker pull fclebinho/jib-example:2024.5.29.1.39.24
+  sudo docker run -d -p 80:8080 fclebinho/jib-example:2024.5.29.1.39.24
   EOF
 
   depends_on = [module.vpc.natgw_ids]
